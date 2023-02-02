@@ -12,6 +12,7 @@ const App = () => {
     <div className='flex flex-col gap-8 p-8'>
       <section>
         <h2 className='font-bold'>Popover</h2>
+        <h3 className='font-bold'>ステートと分岐処理で実装</h3>
         <Popover.Root open={open} onOpenChange={setOpen}>
           <Popover.Trigger
             className={`${open ? 'bg-blue-200' : 'bg-gray-200'} rounded px-2 py-1 shadow`}
@@ -27,11 +28,26 @@ const App = () => {
             </Popover.Content>
           </Popover.Portal>
         </Popover.Root>
+
+        <h3 className='mt-4 font-bold'>クラスで実装</h3>
+        <Popover.Root>
+          <Popover.Trigger className='rounded bg-gray-200 px-2 py-1 shadow data-[state=open]:bg-blue-200'>
+            More info
+          </Popover.Trigger>
+          <Popover.Portal>
+            <Popover.Content className='max-w-sm rounded-xl bg-red-200 px-2 py-4'>
+              Some more info… Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut 500 labore et dolore magna aliqua. Ut enim ad minim
+              veniam
+              <Popover.Arrow className='fill-red-200' />
+            </Popover.Content>
+          </Popover.Portal>
+        </Popover.Root>
       </section>
 
       <section>
         <h2 className='font-bold'>Slider</h2>
-        <form>
+        <form className='flex gap-2'>
           <Slider.Root
             defaultValue={[50]}
             max={100}
@@ -44,7 +60,11 @@ const App = () => {
             </Slider.Track>
             <Slider.Thumb className='block h-[20px] w-[20px] rounded-[10px] bg-fuchsia-500 shadow-sm hover:bg-fuchsia-500 focus:shadow-lg focus:outline-0' />
           </Slider.Root>
+          %
         </form>
+        <ul>
+          <li>方向キーで増減できる</li>
+        </ul>
       </section>
     </div>
   )
