@@ -14,7 +14,7 @@ const CollapsibleDemo = () => {
           </button>
         </Collapsible.Trigger>
       </div>
-      <Collapsible.Content className='text-sm'>
+      <Collapsible.Content className='CollapsibleContent text-sm'>
         <p className='CollapsibleItem'>
           <small>
             <b>2023-02-05</b> / <b>25分</b>

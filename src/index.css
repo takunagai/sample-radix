@@ -270,7 +270,23 @@
   box-shadow: 0 0 0 2px gray;
 }
 
+.CollapsibleContent[data-state='open'] {
+  animation: collapseOpen 300ms ease-out;
+}
+/*.CollapsibleContent[data-state='close'] {}*/
+
 .CollapsibleItem {
   padding: 7px;
   border-bottom: 1px dashed #c7c7c7;
+}
+
+@keyframes collapseOpen {
+  from {
+    transform: translateY(-10%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
