@@ -4,9 +4,14 @@ import * as Slider from '@radix-ui/react-slider'
 import './index.css'
 
 const App = () => {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false) // Popover 用
+  const [slideValues, setSlideValues] = useState([0]) // Slider 用
 
-  // const handleValueChange = () => {}
+  const handleSlideValueFull = () => {
+    if (slideValues[0] === 100) {
+      alert('完了！')
+    }
+  }
 
   return (
     <div className='flex flex-col gap-8 p-8'>
@@ -46,21 +51,25 @@ const App = () => {
       </section>
 
       <section>
-        <h2 className='font-bold'>Slider</h2>
+        <h2 className='text-2xl font-bold'>Slider</h2>
         <form className='flex gap-2'>
           <Slider.Root
-            defaultValue={[50]}
+            value={slideValues}
+            onValueChange={setSlideValues}
+            onValueCommit={handleSlideValueFull}
             max={100}
             step={10}
             aria-label='Progress'
             className='relative flex w-[200px] touch-none select-none items-center data-[orientation=horizontal]:h-[20px] data-[orientation=vertical]:h-[100px] data-[orientation=vertical]:w-[20px]'
           >
-            <Slider.Track className='relative flex-grow rounded-full bg-amber-600  data-[orientation=horizontal]:h-[3px] data-[orientation=vertical]:w-[3px]'>
-              <Slider.Range className='absolute h-full rounded-full bg-blue-400' />
+            <Slider.Track className='relative flex-grow rounded-full bg-gray-300  data-[orientation=horizontal]:h-[3px] data-[orientation=vertical]:w-[3px]'>
+              <Slider.Range className='absolute h-full rounded-full bg-primary-400' />
             </Slider.Track>
-            <Slider.Thumb className='block h-[20px] w-[20px] rounded-[10px] bg-fuchsia-500 shadow-sm hover:bg-fuchsia-500 focus:shadow-lg focus:outline-0' />
+            <Slider.Thumb className='block h-[20px] w-[20px] rounded-[10px] bg-primary-600 shadow-sm hover:bg-primary-500 focus:shadow-lg focus:outline-0' />
           </Slider.Root>
-          %
+          <b>
+            <span className='text-2xl'>{slideValues}</span>%
+          </b>
         </form>
         <ul>
           <li>方向キーで増減できる</li>
