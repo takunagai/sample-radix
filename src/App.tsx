@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import * as Popover from '@radix-ui/react-popover'
 import * as Slider from '@radix-ui/react-slider'
+import * as Tabs from '@radix-ui/react-tabs'
 import './index.css'
 
 const App = () => {
@@ -16,7 +17,56 @@ const App = () => {
   return (
     <div className='flex flex-col gap-8 p-8'>
       <section>
-        <h2 className='font-bold'>Popover</h2>
+        <h2 className='text-2xl font-bold'>Tab</h2>
+        <Tabs.Root className='TabsRoot max-w-lg rounded-lg border shadow' defaultValue='tab1'>
+          <Tabs.List
+            className='TabsList border-b-2 border-gray-200'
+            aria-label='Manage your account'
+          >
+            <Tabs.Trigger
+              className='TabsTrigger h-[45px] rounded-tl-lg bg-white px-6 font-bold hover:text-primary-500 data-[state=active]:bg-primary-50 data-[state=active]:text-primary-500'
+              value='tab1'
+            >
+              タブ１
+            </Tabs.Trigger>
+            <Tabs.Trigger
+              className='TabsTrigger h-[45px] bg-white px-6 font-bold hover:text-primary-500 data-[state=active]:bg-primary-50 data-[state=active]:text-primary-500'
+              value='tab2'
+            >
+              タブ２
+            </Tabs.Trigger>
+            <Tabs.Trigger
+              className='TabsTrigger h-[45px] rounded-tr-lg bg-white px-6 font-bold hover:text-primary-500 data-[state=active]:bg-primary-50 data-[state=active]:text-primary-500'
+              value='tab3'
+            >
+              タブ３
+            </Tabs.Trigger>
+          </Tabs.List>
+          <Tabs.Content className='TabsContent rounded-b-lg bg-white p-6' value='tab1'>
+            <p>タブ１のコンテンツ</p>
+            <ul className='mt-4 list-inside list-disc'>
+              <li>コンポーネントの基本部分は index.css、装飾的な指定は Tailwind クラスで</li>
+              <li>
+                <a
+                  href='https://www.radix-ui.com/docs/primitives/components/tabs'
+                  className='underline'
+                >
+                  Tabs – Radix UI
+                </a>
+              </li>
+            </ul>
+          </Tabs.Content>
+          <Tabs.Content className='TabsContent rounded-b-lg bg-white p-6' value='tab2'>
+            <p>タブ２のコンテンツ</p>
+          </Tabs.Content>
+          <Tabs.Content className='TabsContent rounded-b-lg bg-white p-6' value='tab3'>
+            <p>タブ３のコンテンツ</p>
+          </Tabs.Content>
+        </Tabs.Root>
+      </section>
+
+      <section>
+        <h2 className='text-2xl font-bold'>Popover</h2>
         <h3 className='font-bold'>ステートと分岐処理で実装</h3>
         <Popover.Root open={open} onOpenChange={setOpen}>
           <Popover.Trigger
