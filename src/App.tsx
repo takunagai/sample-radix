@@ -6,6 +6,7 @@ import Dialog2 from './components/Dialog'
 import RadioGroupDemo from './components/RadioGroup'
 import ToggleGroupDemo from './components/ToggleGroup'
 import ScrollArea from './components/ScrollArea'
+import CollapsibleDemo from './components/Collapsible'
 import * as Dialog from '@radix-ui/react-dialog'
 import './index.css'
 
@@ -186,6 +187,11 @@ const App = () => {
             </Dialog.Content>
           </Dialog.Portal>
         </Dialog.Root>
+      </section>
+
+      <section>
+        <h2 className='text-2xl font-bold'>Collapsible</h2>
+        <CollapsibleDemo />
       </section>
     </div>
   )
