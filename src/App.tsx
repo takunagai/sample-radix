@@ -2,6 +2,7 @@ import { useState } from 'react'
 import * as Popover from '@radix-ui/react-popover'
 import * as Slider from '@radix-ui/react-slider'
 import * as Tabs from '@radix-ui/react-tabs'
+import Dialog from './components/Dialog'
 import './index.css'
 
 const App = () => {
@@ -124,6 +125,11 @@ const App = () => {
         <ul>
           <li>方向キーで増減できる</li>
         </ul>
+      </section>
+
+      <section>
+        <h2 className='text-2xl font-bold'>Dialog</h2>
+        <Dialog />
       </section>
     </div>
   )
