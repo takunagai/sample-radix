@@ -15,31 +15,31 @@ const App = () => {
         <h3 className='font-bold'>ステートと分岐処理で実装</h3>
         <Popover.Root open={open} onOpenChange={setOpen}>
           <Popover.Trigger
-            className={`${open ? 'bg-blue-200' : 'bg-gray-200'} rounded px-2 py-1 shadow`}
+            className={`${open ? 'bg-primary-200' : 'bg-primary-100'} rounded px-2 py-1 shadow`}
           >
             More info
           </Popover.Trigger>
           <Popover.Portal>
-            <Popover.Content className='max-w-sm rounded-xl bg-red-200 px-2 py-4'>
+            <Popover.Content className='max-w-sm rounded-xl bg-gray-100 px-2 py-4'>
               Some more info… Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
               eiusmod tempor incididunt ut 500 labore et dolore magna aliqua. Ut enim ad minim
               veniam
-              <Popover.Arrow className='fill-red-200' />
+              <Popover.Arrow className='fill-gray-100' />
             </Popover.Content>
           </Popover.Portal>
         </Popover.Root>
 
         <h3 className='mt-4 font-bold'>クラスで実装</h3>
         <Popover.Root>
-          <Popover.Trigger className='rounded bg-gray-200 px-2 py-1 shadow data-[state=open]:bg-blue-200'>
+          <Popover.Trigger className='rounded bg-primary-100 px-2 py-1 shadow data-[state=open]:bg-primary-200'>
             More info
           </Popover.Trigger>
           <Popover.Portal>
-            <Popover.Content className='max-w-sm rounded-xl bg-red-200 px-2 py-4'>
+            <Popover.Content className='max-w-sm rounded-xl bg-gray-100 px-2 py-4'>
               Some more info… Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
               eiusmod tempor incididunt ut 500 labore et dolore magna aliqua. Ut enim ad minim
               veniam
-              <Popover.Arrow className='fill-red-200' />
+              <Popover.Arrow className='fill-gray-100' />
             </Popover.Content>
           </Popover.Portal>
         </Popover.Root>
