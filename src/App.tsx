@@ -2,9 +2,10 @@ import { useState } from 'react'
 import * as Popover from '@radix-ui/react-popover'
 import * as Slider from '@radix-ui/react-slider'
 import * as Tabs from '@radix-ui/react-tabs'
-import Dialog from './components/Dialog'
+import Dialog2 from './components/Dialog'
 import RadioGroupDemo from './components/RadioGroup'
 import ToggleGroupDemo from './components/ToggleGroup'
+import ScrollArea from './components/ScrollArea'
 import './index.css'
 
 const App = () => {
@@ -131,7 +132,7 @@ const App = () => {
 
       <section>
         <h2 className='text-2xl font-bold'>Dialog</h2>
-        <Dialog />
+        <Dialog2 />
       </section>
 
       <section>
@@ -143,6 +144,11 @@ const App = () => {
         <h2 className='text-2xl font-bold'>Toggle Group</h2>
         優先度：
         <ToggleGroupDemo />
+      </section>
+
+      <section>
+        <h2 className='text-2xl font-bold'>Scroll Area</h2>
+        <ScrollArea />
       </section>
     </div>
   )
