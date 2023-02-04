@@ -6,6 +6,7 @@ import Dialog2 from './components/Dialog'
 import RadioGroupDemo from './components/RadioGroup'
 import ToggleGroupDemo from './components/ToggleGroup'
 import ScrollArea from './components/ScrollArea'
+import * as Dialog from '@radix-ui/react-dialog'
 import './index.css'
 
 const App = () => {
@@ -149,6 +150,42 @@ const App = () => {
       <section>
         <h2 className='text-2xl font-bold'>Scroll Area</h2>
         <ScrollArea />
+      </section>
+
+      <section>
+        <h2 className='text-2xl font-bold'>Dialog x Scroll Area</h2>
+        <Dialog.Root>
+          <Dialog.Trigger asChild>
+            <button className='rounded bg-primary-100 px-2 py-1 shadow data-[state=open]:bg-primary-200'>
+              Open Dialog
+            </button>
+          </Dialog.Trigger>
+          <Dialog.Portal>
+            <Dialog.Overlay className='DialogOverlay bg-black/50' />
+            <Dialog.Content className='DialogContent max-h-[85vh] w-11/12 max-w-xl rounded-xl bg-white p-6'>
+              <Dialog.Title className='DialogTitle text-xl font-bold'>Edit profile</Dialog.Title>
+              <Dialog.Description className='DialogDescription mt-2 mb-4'>
+                Make changes to your profile here. Click save when youre done.
+              </Dialog.Description>
+              <ScrollArea />
+              <div className='mt-6 flex justify-end'>
+                <Dialog.Close asChild>
+                  <button className='rounded bg-primary-100 px-2 py-1 shadow data-[state=open]:bg-primary-200'>
+                    Save Changes
+                  </button>
+                </Dialog.Close>
+              </div>
+              <Dialog.Close asChild>
+                <button
+                  className='IconButton right-[10px] top-[10px] inline-flex h-[25px] w-[25px] items-center justify-center rounded-full hover:bg-gray-100 focus:shadow'
+                  aria-label='Close'
+                >
+                  ×
+                </button>
+              </Dialog.Close>
+            </Dialog.Content>
+          </Dialog.Portal>
+        </Dialog.Root>
       </section>
     </div>
   )
