@@ -3,6 +3,7 @@ import * as Popover from '@radix-ui/react-popover'
 import * as Slider from '@radix-ui/react-slider'
 import * as Tabs from '@radix-ui/react-tabs'
 import Dialog from './components/Dialog'
+import RadioGroupDemo from './components/RadioGroup'
 import './index.css'
 
 const App = () => {
@@ -130,6 +131,11 @@ const App = () => {
       <section>
         <h2 className='text-2xl font-bold'>Dialog</h2>
         <Dialog />
+      </section>
+
+      <section>
+        <h2 className='text-2xl font-bold'>Radio Group</h2>
+        <RadioGroupDemo />
       </section>
     </div>
   )
