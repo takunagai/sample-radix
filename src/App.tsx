@@ -4,6 +4,7 @@ import * as Slider from '@radix-ui/react-slider'
 import * as Tabs from '@radix-ui/react-tabs'
 import Dialog from './components/Dialog'
 import RadioGroupDemo from './components/RadioGroup'
+import ToggleGroupDemo from './components/ToggleGroup'
 import './index.css'
 
 const App = () => {
@@ -136,6 +137,12 @@ const App = () => {
       <section>
         <h2 className='text-2xl font-bold'>Radio Group</h2>
         <RadioGroupDemo />
+      </section>
+
+      <section>
+        <h2 className='text-2xl font-bold'>Toggle Group</h2>
+        優先度：
+        <ToggleGroupDemo />
       </section>
     </div>
   )
